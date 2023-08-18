@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Johan Ticket - Website</title>
+
+    <!-- --------- Style CSS --------------- -->
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- --- Date Picker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- multistep form -->
+    <form id="msform">
+        <!-- progressbar -->
+        <ul id="progressbar">
+            <li class="active">Tickets</li>
+            <li>Select Ticket</li>
+            <li>Select Date</li>
+            <li>Time Slot</li>
+            <li>Personal Details</li>
+            <li>Summary</li>
+        </ul>
+
+        <!-- #Choose from  -->
+        <!------------------------ Slide 01 - Ticket Bundle --------------------------->
+        <fieldset>
+            <h2 class="fs-title">Choose Your ticket bundle</h2>
+            <h3 class="fs-subtitle">Your presence on the social network</h3>
+            <div class="d-grid gap-2">
+
+                <!-- <div class="check">
+
+                    <input type="radio" class="form-check-input" id="flexRadioDefault1" name="flexRadioDefault" value="Individual Ticket">
+                    <label  class="btn" for="flexRadioDefault1">Individual Ticket</label><br>
+                </div>
+               
+                <div class="check">
+
+                    <input type="radio" class="form-check-input" id="flexRadioDefault4" name="flexRadioDefault" value="HTML">
+                    <label class="btn" for="flexRadioDefault4">Happy hour 50% OFF</label><br>
+                </div> -->
+
+                <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+                    <label class="btn btn-radio" for="vbtn-radio1">Individual Ticket</label>
+
+                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+                    <label class="btn btn-radio" for="vbtn-radio2">Bundle of 5 - Save 123%</label>
+
+                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+                    <label class="btn btn-radio" for="vbtn-radio3">Bundle of 4 - Save 123%</label>
+
+                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio4" autocomplete="off">
+                    <label class="btn btn-radio" for="vbtn-radio4">Happy hour 50% OFF</label>
+
+                </div>
+                <!-- <button class="btn new-btn" type="button">Bundle of 4 - Save 123%</button> -->
+            </div>
+            <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+
+
+        <!------------------------ Slide 02 - Ticket Quantity --------------------------->
+        <fieldset>
+            <h2 class="fs-title">Ticket Quantity</h2>
+            <h3 class="fs-subtitle">We will never sell it</h3>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-right">
+                        <h3>Age = 14+</h3>
+                        <h3>Age = 7 to 13</h3>
+                        <h3>Age under 7</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="info-left">
+                        <div class="info-details">
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="quantity-box">
+                                        <div class="value-button" id="decrease" onclick="decreaseValue()"
+                                            value="Decrease Value">-</div>
+                                        <input type="number" id="number" value="0" />
+                                        <div class="value-button" id="increase" onclick="increaseValue()"
+                                            value="Increase Value">+</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <h3>EUR 33</h3>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-details">
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="quantity-box">
+                                        <div class="value-button" id="decrease" onclick="decreaseValue()"
+                                            value="Decrease Value">-</div>
+                                        <input type="number" id="number" value="0" />
+                                        <div class="value-button" id="increase" onclick="increaseValue()"
+                                            value="Increase Value">+</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <h3>EUR 22</h3>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-details">
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="quantity-box">
+                                        <div class="value-button" id="decrease" onclick="decreaseValue()"
+                                            value="Decrease Value">-</div>
+                                        <input type="number" id="number" value="0" />
+                                        <div class="value-button" id="increase" onclick="increaseValue()"
+                                            value="Increase Value">+</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <h3>- Free -</h3>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row total-bar">
+                    <div class="col-md-6 total-left">
+                        <h3>Total</h3>
+                    </div>
+                    <div class="col-md-6 total-right">
+                        <h3>EUR 143.00</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+
+        </fieldset>
+
+
+        <!------------------------ Slide 03 - Calender  --------------------------->
+        <fieldset>
+            <h2 class="fs-title">Select Day</h2>
+
+            <div id="datepicker"></div>
+
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+
+
+        <!------------------------ Slide 04 - Time Slot --------------------------->
+        <fieldset>
+            <h2 class="fs-title">Choose Your Time Slot</h2>
+            <h3 class="fs-subtitle">Your presence on the social network</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group-vertical time-table" role="group"
+                        aria-label="Vertical radio toggle button group">
+                        <div class="time-slot">
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio5" autocomplete="off"
+                                checked>
+                            <label class="btn btn-radio2" for="vbtn-radio5">11:00 - 01:30</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio6" autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio6">11:30 - 02:00</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio7" autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio7">12:00 - 02:30</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio8" autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio8">12:30 - 03:00</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio9" autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio9">01:00 - 03:30</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio10"
+                                autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio10">01:30 - 04:00</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="btn-group-vertical time-table" role="group"
+                        aria-label="Vertical radio toggle button group">
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio11"
+                                autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio11">02:00 - 04:30</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio12"
+                                autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio12">02:30 - 05:00</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio13"
+                                autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio13">03:00 - 05:30</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio14"
+                                autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio14">03:30 - 06:00</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio15"
+                                autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio15">04:00 - 06:30</label>
+
+                            <label class="avail">90</label>
+                        </div>
+
+                        <div class="time-slot">
+
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio16"
+                                autocomplete="off">
+                            <label class="btn btn-radio2" for="vbtn-radio16">04:30 - 07:00</label>
+
+                            <label class="avail">90</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="happy-bar">
+                        <h3>Happy Hour</h3>
+                        <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio17" autocomplete="off">
+                        <label class="btn btn-radio2 happy-slot" for="vbtn-radio17">04:30 - 07:00</label>
+
+                        <label class="avail-happy">90</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+
+        </fieldset>
+
+
+        <!------------------------ Slide 05 - Details --------------------------->
+        <fieldset>
+            <h2 class="fs-title">Personal Details</h2>
+            <h3 class="fs-subtitle">We will never sell it</h3>
+            <input type="text" name="fname" placeholder="First Name" />
+            <input type="text" name="lname" placeholder="Last Name" />
+            <input type="text" name="phone" placeholder="Phone" />
+
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+
+        </fieldset>
+
+
+        <!------------------------ Slide 06 - Summary --------------------------->
+        <fieldset>
+            <div class="summary">
+
+                <h2 class="table-head">Personal Details</h2>
+                <table class="summary-table">
+                    <tr>
+                        <td class="table-td">Full Name</td>
+                        <td class="table-td">David Dobrek</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td">Email Address</td>
+                        <td class="table-td">daviddobrek021@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td">Mobile</td>
+                        <td class="table-td">123 456 7890</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="summary">
+
+                <h2 class="table-head">Ticket Details</h2>
+                <table class="summary-table">
+                    <tr>
+                        <td class="table-td">Time Slot</td>
+                        <td class="table-td">11:00 - 01:30</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td">Day</td>
+                        <td class="table-td">Thursday, 25 August</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td">Type</td>
+                        <td class="table-td">Individual Ticket</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td">Age 14</td>
+                        <td class="table-td">EUR 33.00 x3</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td">Age 7 to 13</td>
+                        <td class="table-td">EUR 22.00 x2</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td">Age under 7</td>
+                        <td class="table-td">Free</td>
+                    </tr>
+
+                    <tr class="total-summary">
+                        <td class="table-td">Payment Due</td>
+                        <td class="table-td">143.00</td>
+                    </tr>
+                </table>
+            </div>
+
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <a href="#" class="submit action-button" target="_top">Submit</a>
+        </fieldset>
+
+    </form>
+
+    <!-- ----------------------------------BS Javascript----------------------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        //jQuery time
+        var current_fs, next_fs, previous_fs; //fieldsets
+        var left, opacity, scale; //fieldset properties which we will animate
+        var animating; //flag to prevent quick multi-click glitches
+
+        $(".next").click(function () {
+            if (animating) return false;
+            animating = true;
+
+            current_fs = $(this).parent();
+            next_fs = $(this).parent().next();
+
+            //activate next step on progressbar using the index of next_fs
+            $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+            //show the next fieldset
+            next_fs.show();
+            //hide the current fieldset with style
+            current_fs.animate({ opacity: 0 }, {
+                step: function (now, mx) {
+                    //as the opacity of current_fs reduces to 0 - stored in "now"
+                    //1. scale current_fs down to 80%
+                    scale = 1 - (1 - now) * 0.2;
+                    //2. bring next_fs from the right(50%)
+                    left = (now * 50) + "%";
+                    //3. increase opacity of next_fs to 1 as it moves in
+                    opacity = 1 - now;
+                    current_fs.css({
+                        'transform': 'scale(' + scale + ')',
+                        'position': 'absolute'
+                    });
+                    next_fs.css({ 'left': left, 'opacity': opacity });
+                },
+                duration: 800,
+                complete: function () {
+                    current_fs.hide();
+                    animating = false;
+                },
+                //this comes from the custom easing plugin
+                easing: 'easeInOutBack'
+            });
+        });
+
+        $(".previous").click(function () {
+            if (animating) return false;
+            animating = true;
+
+            current_fs = $(this).parent();
+            previous_fs = $(this).parent().prev();
+
+            //de-activate current step on progressbar
+            $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+            //show the previous fieldset
+            previous_fs.show();
+            //hide the current fieldset with style
+            current_fs.animate({ opacity: 0 }, {
+                step: function (now, mx) {
+                    //as the opacity of current_fs reduces to 0 - stored in "now"
+                    //1. scale previous_fs from 80% to 100%
+                    scale = 0.8 + (1 - now) * 0.2;
+                    //2. take current_fs to the right(50%) - from 0%
+                    left = ((1 - now) * 50) + "%";
+                    //3. increase opacity of previous_fs to 1 as it moves in
+                    opacity = 1 - now;
+                    current_fs.css({ 'left': left });
+                    previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
+                },
+                duration: 800,
+                complete: function () {
+                    current_fs.hide();
+                    animating = false;
+                },
+                //this comes from the custom easing plugin
+                easing: 'easeInOutBack'
+            });
+        });
+
+
+    </script>
+
+
+    <!-- Quantity Increase and Decrease button -->
+    <script>
+        function increaseValue() {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('number').value = value;
+        }
+
+        function decreaseValue() {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value < 1 ? value = 1 : '';
+            value--;
+            document.getElementById('number').value = value;
+        }
+    </script>
+
+</body>
+
+</html>

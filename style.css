@@ -79,7 +79,8 @@ body {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+    background-color: #040404;
+    transition: 0.3s;
 }
 
 /*headings*/
@@ -111,7 +112,7 @@ body {
     color: white;
     text-transform: uppercase;
     font-size: 10px;
-    width: 16.33%;
+    width: 24.59%;
     float: left;
     position: relative;
 }
@@ -186,6 +187,20 @@ body {
     color: white !important;
     border: none;
     outline: none;
+}
+
+/* Slide 01 Ticket Selection */
+
+.slide-01-title {
+    padding-bottom: 20px;
+}
+
+.slide-01 {
+    padding-bottom: 20px;
+}
+
+.ticket-btn {
+    padding: 12px 144px !important;
 }
 
 /* Slide 2 Quantity adding button */
@@ -265,6 +280,35 @@ input#number {
     margin: 0px;
     width: 40px;
     height: 40px;
+    z-index: 1;
+    background-color: #3d3d3d;
+    color: white;
+}
+
+input#number1 {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    background-color: #3d3d3d;
+    color: white;
+}
+
+input#number2 {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    background-color: #3d3d3d;
+    color: white;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -325,13 +369,13 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: end;
 }
 
-#increase{
+#increase {
     color: white;
     background-color: #878787 !important;
     border-left: none !important;
 }
 
-#decrease{
+#decrease {
     color: white;
     background-color: #878787 !important;
 }
@@ -342,9 +386,16 @@ input#number {
 }
 
 /* --------- Date Picker ----------- */
+#datepicker {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
 .ui-datepicker td span,
 .ui-datepicker td a {
     padding: 31px 10px 0 10px !important;
+    font-size: 22px;
 }
 
 .ui-widget {
@@ -442,6 +493,46 @@ a.ui-button:active,
     border-radius: 10px !important;
 }
 
+.modal-btn {
+    background: #27AE60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 9px 81px;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-size: 19px;
+    border-radius: 6px;
+    margin-top: 36px;
+    box-shadow: 1px 1px 9px #686868;
+    transition: 0.3s;
+}
+
+.modal-header{
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.modal-header .btn-close{
+    background-color: white;
+}
+
+.modal-btn:hover {
+    background-color: #1b7c44;
+}
+
+.modal-title {
+    font-weight: 600;
+    color: white;
+}
+
+.save-btn {
+    background: #27AE60 !important;
+    border-color: #27AE60 !important;
+}
+
 
 /* ============ Summary ============= */
 .summary-table {
@@ -470,4 +561,51 @@ a.ui-button:active,
 .total-summary {
     background-color: #484848;
     color: white;
+}
+
+
+/* ================= Card Details ==================== */
+
+.card-det-head {
+    font-size: 45px !important;
+    text-align: left;
+    padding-bottom: 30px;
+    font-weight: 600;
+}
+
+.card-head {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 4px;
+    margin-top: 26px;
+}
+
+#submit:hover {
+    background-color: orange;
+}
+
+/* Style the button when disabled */
+#submit:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+#agree {
+    width: 44px !important;
+    margin-bottom: 0 !important;
+    cursor: pointer;
+}
+
+.terms-cond {
+    display: flex !important;
+    /* margin: 0; */
+    padding: 8px 0;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.terms-head {
+    text-decoration: none;
+    font-weight: 600;
 }

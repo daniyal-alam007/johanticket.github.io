@@ -9,7 +9,7 @@
     <title>Johan Ticket - Website</title>
 
     <!-- --------- Style CSS --------------- -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -31,65 +31,52 @@
     <form id="msform">
         <!-- progressbar -->
         <ul id="progressbar">
-            <li class="active">Tickets</li>
-            <li>Ticket auswählen</li>
-            <li>Datum auswählen</li>
-            <li>Zeitfenster</li>
-            <li>Persönliche Daten</li>
-            <li>Zusammenfassung</li>
+            <li class="active">Select Tickets</li>
+            <li>Select Time</li>
+            <li>Summary</li>
+            <li>Checkout</li>
         </ul>
 
         <!-- #Choose from  -->
         <!------------------------ Slide 01 - Ticket Bundle --------------------------->
         <fieldset>
-            <h2 class="fs-title">Wählen Sie Ihr Ticketpaket</h2>
-<!--             <h3 class="fs-subtitle">Your presence on the social network</h3> -->
+            <h2 class="fs-title slide-01-title">Choose Your ticket bundle</h2>
+            <!-- <h3 class="fs-subtitle">Your presence on the social network</h3> -->
             <div class="d-grid gap-2">
 
-                <!-- <div class="check">
+                <div class="row slide-01">
+                    <div class="col-md-6">
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+                            <label class="btn btn-radio ticket-btn" for="vbtn-radio2">Bundle of 5 - Save 123%</label>
 
-                    <input type="radio" class="form-check-input" id="flexRadioDefault1" name="flexRadioDefault" value="Individual Ticket">
-                    <label  class="btn" for="flexRadioDefault1">Individual Ticket</label><br>
-                </div>
-               
-                <div class="check">
+                        </div>
+                    </div>
 
-                    <input type="radio" class="form-check-input" id="flexRadioDefault4" name="flexRadioDefault" value="HTML">
-                    <label class="btn" for="flexRadioDefault4">Happy hour 50% OFF</label><br>
-                </div> -->
+                    <div class="col-md-6">
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 
-                <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
-                    <label class="btn btn-radio" for="vbtn-radio1">Einzeltickets buchen</label>
+                            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+                            <label class="btn btn-radio ticket-btn" for="vbtn-radio3">Bundle of 4 - Save 123%</label>
 
-                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
-                    <label class="btn btn-radio" for="vbtn-radio2">Familienticket für bis zu 5 Personen</label>
-
-                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-                    <label class="btn btn-radio" for="vbtn-radio3">Gruppenticket für vier Personen</label>
-
-                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio4" autocomplete="off">
-                    <label class="btn btn-radio" for="vbtn-radio4">Happy hour 50% Rabatt (letzte Stunde des Tages)</label>
+                        </div>
+                    </div>
 
                 </div>
-                <!-- <button class="btn new-btn" type="button">Bundle of 4 - Save 123%</button> -->
+
             </div>
-            <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
-            <input type="button" name="next" class="next action-button" value="Weiter" />
-        </fieldset>
 
+            <br>
 
-        <!------------------------ Slide 02 - Ticket Quantity --------------------------->
-        <fieldset>
-            <h2 class="fs-title">Ticketmenge</h2>
-<!--             <h3 class="fs-subtitle">We will never sell it</h3> -->
+            <h2 class="fs-title">OR SELECT INDIVIDUAL</h2>
+            <!-- <h3 class="fs-subtitle">We will never sell it</h3> -->
 
             <div class="row">
                 <div class="col-md-6">
                     <div class="info-right">
-                        <h3>Alter 14+</h3>
-                        <h3>Alter 7-14 Jahre</h3>
-                        <h3>Alter 0-7 Jahre umsonst</h3>
+                        <h3>Age = 14+</h3>
+                        <h3>Age = 7 to 13</h3>
+                        <h3>Age under 7</h3>
                     </div>
                 </div>
 
@@ -120,10 +107,10 @@
                                 <div class="col-md-6">
 
                                     <div class="quantity-box">
-                                        <div class="value-button" id="decrease" onclick="decreaseValue()"
+                                        <div class="value-button" id="decrease" onclick="decreaseValue1()"
                                             value="Decrease Value">-</div>
-                                        <input type="number" id="number" value="0" />
-                                        <div class="value-button" id="increase" onclick="increaseValue()"
+                                        <input type="number" id="number1" value="0" />
+                                        <div class="value-button" id="increase" onclick="increaseValue1()"
                                             value="Increase Value">+</div>
                                     </div>
 
@@ -139,16 +126,16 @@
                                 <div class="col-md-6">
 
                                     <div class="quantity-box">
-                                        <div class="value-button" id="decrease" onclick="decreaseValue()"
+                                        <div class="value-button" id="decrease" onclick="decreaseValue2()"
                                             value="Decrease Value">-</div>
-                                        <input type="number" id="number" value="0" />
-                                        <div class="value-button" id="increase" onclick="increaseValue()"
+                                        <input type="number" id="number2" value="0" />
+                                        <div class="value-button" id="increase" onclick="increaseValue2()"
                                             value="Increase Value">+</div>
                                     </div>
 
                                 </div>
                                 <div class="col-md-6">
-                                    <h3>- Frei -</h3>
+                                    <h3>- Free -</h3>
 
                                 </div>
                             </div>
@@ -158,7 +145,7 @@
 
                 <div class="row total-bar">
                     <div class="col-md-6 total-left">
-                        <h3>Gesamtpreis</h3>
+                        <h3>Total</h3>
                     </div>
                     <div class="col-md-6 total-right">
                         <h3>EUR 143.00</h3>
@@ -167,27 +154,24 @@
 
             </div>
 
-            <input type="button" name="previous" class="previous action-button" value="Vorherige" />
-            <input type="button" name="next" class="next action-button" value="Weiter" />
+            <input type="button" name="next" class="next action-button" value="Next" />
 
+            <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
+            <!-- <input type="button" name="next" class="next action-button" value="Next" /> -->
         </fieldset>
 
 
-        <!------------------------ Slide 03 - Calender  --------------------------->
+
+        <!------------------------ Slide 02 - Calender  --------------------------->
         <fieldset>
-            <h2 class="fs-title">Wählen Sie Tag aus</h2>
+            <h2 class="fs-title">Select Day</h2>
 
             <div id="datepicker"></div>
 
-            <input type="button" name="previous" class="previous action-button" value="Vorherige" />
-            <input type="button" name="next" class="next action-button" value="Weiter" />
-        </fieldset>
+            <br>
 
+            <h2 class="fs-title">Choose Your Time Slot</h2>
 
-        <!------------------------ Slide 04 - Time Slot --------------------------->
-        <fieldset>
-            <h2 class="fs-title">Wählen Sie Ihr Zeitfenster</h2>
-<!--             <h3 class="fs-subtitle">Your presence on the social network</h3> -->
             <div class="row">
                 <div class="col-md-6">
                     <div class="btn-group-vertical time-table" role="group"
@@ -195,7 +179,7 @@
                         <div class="time-slot">
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio5" autocomplete="off"
                                 checked>
-                            <label class="btn btn-radio2" for="vbtn-radio5">11:00 - 13:30</label>
+                            <label class="btn btn-radio2" for="vbtn-radio5">11:00 - 01:30</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -203,7 +187,7 @@
                         <div class="time-slot">
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio6" autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio6">11:30 - 14:00</label>
+                            <label class="btn btn-radio2" for="vbtn-radio6">11:30 - 02:00</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -211,7 +195,7 @@
                         <div class="time-slot">
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio7" autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio7">12:00 - 14:30</label>
+                            <label class="btn btn-radio2" for="vbtn-radio7">12:00 - 02:30</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -219,14 +203,14 @@
                         <div class="time-slot">
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio8" autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio8">12:30 - 15:00</label>
+                            <label class="btn btn-radio2" for="vbtn-radio8">12:30 - 03:00</label>
 
                             <label class="avail">90</label>
                         </div>
 
                         <div class="time-slot">
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio9" autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio9">13:00 - 15:30</label>
+                            <label class="btn btn-radio2" for="vbtn-radio9">01:00 - 03:30</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -235,7 +219,7 @@
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio10"
                                 autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio10">13:30 - 16:00</label>
+                            <label class="btn btn-radio2" for="vbtn-radio10">01:30 - 04:00</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -251,7 +235,7 @@
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio11"
                                 autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio11">14:00 - 16:30</label>
+                            <label class="btn btn-radio2" for="vbtn-radio11">02:00 - 04:30</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -260,7 +244,7 @@
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio12"
                                 autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio12">14:30 - 17:00</label>
+                            <label class="btn btn-radio2" for="vbtn-radio12">02:30 - 05:00</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -269,7 +253,7 @@
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio13"
                                 autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio13">15:00 - 17:30</label>
+                            <label class="btn btn-radio2" for="vbtn-radio13">03:00 - 05:30</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -278,7 +262,7 @@
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio14"
                                 autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio14">15:30 - 18:00</label>
+                            <label class="btn btn-radio2" for="vbtn-radio14">03:30 - 06:00</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -287,7 +271,7 @@
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio15"
                                 autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio15">16:00 - 18:30</label>
+                            <label class="btn btn-radio2" for="vbtn-radio15">04:00 - 06:30</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -296,7 +280,7 @@
 
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio16"
                                 autocomplete="off">
-                            <label class="btn btn-radio2" for="vbtn-radio16">16:30 - 19:00</label>
+                            <label class="btn btn-radio2" for="vbtn-radio16">04:30 - 07:00</label>
 
                             <label class="avail">90</label>
                         </div>
@@ -307,7 +291,7 @@
                     <div class="happy-bar">
                         <h3>Happy Hour</h3>
                         <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio17" autocomplete="off">
-                        <label class="btn btn-radio2 happy-slot" for="vbtn-radio17">16:30 - 19:00</label>
+                        <label class="btn btn-radio2 happy-slot" for="vbtn-radio17">04:30 - 07:00</label>
 
                         <label class="avail-happy">90</label>
                     </div>
@@ -315,23 +299,39 @@
 
             </div>
 
-            <input type="button" name="previous" class="previous action-button" value="Vorherige" />
-            <input type="button" name="next" class="next action-button" value="Weiter" />
+            <div>
+                <!-- Button trigger modal -->
+                <button type="button" class="modal-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Done
+                </button>
+            </div>
 
-        </fieldset>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Personal Details</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" name="fname" placeholder="First Name"/>
+                            <input type="text" name="lname" placeholder="Last Name"/>
+                            <input type="email" name="email" placeholder="Email"/>
+                            <input type="number" name="phone" placeholder="Phone" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary save-btn">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-        <!------------------------ Slide 05 - Details --------------------------->
-        <fieldset>
-            <h2 class="fs-title">Persönliche Daten</h2>
-<!--             <h3 class="fs-subtitle">We will never sell it</h3> -->
-            <input type="text" name="name" placeholder="Name" />
-            <input type="text" name="email" placeholder="Email" />
-            <input type="text" name="phone" placeholder="Handy" />
-
-            <input type="button" name="previous" class="previous action-button" value="Vorherige" />
-            <input type="button" name="next" class="next action-button" value="Weiter" />
-
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
         </fieldset>
 
 
@@ -339,63 +339,105 @@
         <fieldset>
             <div class="summary">
 
-                <h2 class="table-head">Persönliche Daten</h2>
+                <h2 class="table-head">Personal Details</h2>
                 <table class="summary-table">
                     <tr>
-                        <td class="table-td">Name</td>
-                        <td class="table-td">Johannes Fürsattel</td>
+                        <td class="table-td">Full Name</td>
+                        <td class="table-td">David Dobrek</td>
                     </tr>
                     <tr>
-                        <td class="table-td">Email Addresse</td>
-                        <td class="table-td">fuersattel.office@gmail.com</td>
+                        <td class="table-td">Email Address</td>
+                        <td class="table-td">daviddobrek021@gmail.com</td>
                     </tr>
                     <tr>
-                        <td class="table-td">Handy</td>
-                        <td class="table-td">01575-0754122</td>
+                        <td class="table-td">Mobile</td>
+                        <td class="table-td">123 456 7890</td>
                     </tr>
                 </table>
             </div>
 
             <div class="summary">
 
-                <h2 class="table-head">Details zu den Tickets</h2>
+                <h2 class="table-head">Ticket Details</h2>
                 <table class="summary-table">
                     <tr>
-                        <td class="table-td">Zeitpunkt</td>
+                        <td class="table-td">Time Slot</td>
                         <td class="table-td">11:00 - 01:30</td>
                     </tr>
                     <tr>
-                        <td class="table-td">Tag</td>
-                        <td class="table-td">Donnerstag, 25 August</td>
+                        <td class="table-td">Day</td>
+                        <td class="table-td">Thursday, 25 August</td>
                     </tr>
                     <tr>
-                        <td class="table-td">Typ</td>
-                        <td class="table-td">Einzelticket</td>
+                        <td class="table-td">Type</td>
+                        <td class="table-td">Individual Ticket</td>
                     </tr>
                     <tr>
-                        <td class="table-td">Alter 14</td>
+                        <td class="table-td">Age 14</td>
                         <td class="table-td">EUR 33.00 x3</td>
                     </tr>
                     <tr>
-                        <td class="table-td">Alter 7 bis 13</td>
+                        <td class="table-td">Age 7 to 13</td>
                         <td class="table-td">EUR 22.00 x2</td>
                     </tr>
                     <tr>
-                        <td class="table-td">Jünger als 7 kostenlos</td>
-                        <td class="table-td">Kostenlos</td>
+                        <td class="table-td">Age under 7</td>
+                        <td class="table-td">Free</td>
                     </tr>
 
                     <tr class="total-summary">
-                        <td class="table-td">Gesamtsumme</td>
+                        <td class="table-td">Payment Due</td>
                         <td class="table-td">143.00</td>
                     </tr>
                 </table>
             </div>
 
-            <input type="button" name="previous" class="previous action-button" value="Vorherige" />
-            <input type="button" name="previous" class="previous action-button" value="Kasse" />
-<!--             <a href="#" class="submit action-button" target="_top">Kasse</a> -->
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Checkout" />
         </fieldset>
+
+
+
+        <!------------------------ Slide 07 - Card Number Details --------------------------->
+        <fieldset>
+            <div class="summary">
+
+                <h2 class="card-det-head">Card Details</h2>
+                <div>
+                    <h3 class="card-head">Name on card</h3>
+                    <input type="text" name="card-name" placeholder="Enter name here" />
+                </div>
+
+                <div>
+                    <h3 class="card-head">Card Number</h3>
+                    <input type="number" name="card-number" placeholder="1234 1234 1234 1234" required />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="number" name="expiry" placeholder="MM / YY" required />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="number" name="cvc" placeholder="CVC" required />
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- ============ Terms & Conditions ============== -->
+                <div class="terms-cond">
+                    <input type="checkbox" id="agree">
+                    <label for="agree">I agree to <a href="#" class="terms-head">terms and conditions</a></label>
+                </div>
+
+            </div>
+
+            <!-- <a href="#" class="submit action-button" name="submit" target="_top">Pay Now</a> -->
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <button class="submit action-button" id="submit" disabled>Submit</button>
+
+        </fieldset>
+
 
     </form>
 
@@ -502,6 +544,66 @@
             value--;
             document.getElementById('number').value = value;
         }
+
+        function increaseValue1() {
+            var value = parseInt(document.getElementById('number1').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('number1').value = value;
+        }
+
+        function decreaseValue1() {
+            var value = parseInt(document.getElementById('number1').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value < 1 ? value = 1 : '';
+            value--;
+            document.getElementById('number1').value = value;
+        }
+
+        function increaseValue2() {
+            var value = parseInt(document.getElementById('number2').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('number2').value = value;
+        } s
+
+        function decreaseValue2() {
+            var value = parseInt(document.getElementById('number2').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value < 1 ? value = 1 : '';
+            value--;
+            document.getElementById('number2').value = value;
+        }
+    </script>
+
+
+    <!-- Terms and Conditions Agree Checkbox -->
+    <script>
+        // Get the checkbox element
+        const checkbox = document.querySelector("#agree");
+
+        // Get the button element
+        const button = document.querySelector("#submit");
+
+        // Define a function to check the checkbox status 
+        const checkStatus = () => {
+            // If the checkbox is checked, enable the button
+            if (checkbox.checked) {
+                button.disabled = false;
+            }
+            // Otherwise, disable the button
+            else {
+                button.disabled = true;
+            }
+        }
+
+        // Add an event listener to the checkbox to call the function on change
+        checkbox.addEventListener("change", checkStatus);
+
+        // Do something when the button is clicked
+        button.addEventListener("click", () => {
+            alert("Submitted!");
+        });
     </script>
 
 </body>

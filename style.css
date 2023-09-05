@@ -61,8 +61,16 @@ body {
 }
 
 /*buttons*/
+.btnBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    margin: 0 auto;
+
+}
 #msform .action-button {
-    width: 146px;
+    width: 100%;
     background: #323232;
     font-weight: bold;
     color: white;

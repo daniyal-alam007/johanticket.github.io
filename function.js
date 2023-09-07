@@ -10,31 +10,49 @@ $(document).ready(function() {
         current_fs = $(this).closest('fieldset');
         next_fs = current_fs.next();
 
-        //activate next step on progressbar using the index of next_fs
-        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-        //show the next fieldset
-        next_fs.show();
-        //hide the current fieldset with style
-        current_fs.animate({ opacity: 0 }, {
-            step: function(now, mx) {
-                scale = 1 - (1 - now) * 0.2;
-                left = (now * 50) + "%";
-                opacity = 1 - now;
-                current_fs.css({
-                    'transform': 'scale(' + scale + ')',
-                    'position': 'absolute'
-                });
-                next_fs.css({ 'left': left, 'opacity': opacity });
-            },
-            duration: 800,
-            complete: function() {
-                current_fs.hide();
-                animating = false;
-            },
-            easing: 'easeInOutBack'
+        // Check if all required fields in the current step are filled
+        var requiredFields = current_fs.find('.required');
+        var allFieldsFilled = true;
+        requiredFields.each(function() {
+            if (!this.checkValidity()) {
+                allFieldsFilled = false;
+                // You can display an error message here if needed
+                return false; // Exit the loop early if a field is invalid
+            }
         });
-        $(".modal").modal('hide');
+
+        if (allFieldsFilled) {
+            // Activate next step on the progress bar using the index of next_fs
+            $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+            // Show the next fieldset
+            next_fs.show();
+            // Hide the current fieldset with style
+            current_fs.animate({ opacity: 0 }, {
+                step: function(now, mx) {
+                    scale = 1 - (1 - now) * 0.2;
+                    left = (now * 50) + "%";
+                    opacity = 1 - now;
+                    current_fs.css({
+                        'transform': 'scale(' + scale + ')',
+                        'position': 'absolute'
+                    });
+                    next_fs.css({ 'left': left, 'opacity': opacity });
+                },
+                duration: 800,
+                complete: function() {
+                    current_fs.hide();
+                    animating = false;
+                },
+                easing: 'easeInOutBack'
+            });
+            $(".modal").modal('hide');
+        } else {
+            // Display an error message or provide feedback to the user
+            // You can customize this part to suit your needs
+            alert("Please fill in all required fields.");
+            animating = false; // Prevent animation if fields are not filled
+        }
     });
 
     $(".previous").click(function() {
@@ -44,12 +62,12 @@ $(document).ready(function() {
         current_fs = $(this).closest('fieldset');
         previous_fs = current_fs.prev();
 
-        //de-activate current step on progressbar
+        // De-activate current step on the progress bar
         $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 
-        //show the previous fieldset
+        // Show the previous fieldset
         previous_fs.show();
-        //hide the current fieldset with style
+        // Hide the current fieldset with style
         current_fs.animate({ opacity: 0 }, {
             step: function(now, mx) {
                 scale = 0.8 + (1 - now) * 0.2;

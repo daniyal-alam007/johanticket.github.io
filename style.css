@@ -237,9 +237,7 @@ body {
 /* Quantity button */
 .quantity-box {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
+    justify-content: end;
 }
 
 .value-button {
@@ -616,4 +614,17 @@ a.ui-button:active,
 .terms-head {
     text-decoration: none;
     font-weight: 600;
+}
+
+.paymentBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.paymentImg{
+    width: 80px;
+    margin: 20px 10px 0;
 }
